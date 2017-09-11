@@ -49,7 +49,6 @@ func (s *memproxyService) Delete(ctx context.Context, key string) error {
 }
 
 func (s *memproxyService) Get(ctx context.Context, key string) (item *memcache.Item, err error) {
-	spew.Dump(key)
 	return s.client.Get(key)
 }
 
