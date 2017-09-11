@@ -1,0 +1,268 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Spacing Guild",
+		"_postman_id": "aff7c2ef-5f41-d865-03ea-8580a3f67bd2",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add - testincrdecr: 0",
+			"request": {
+				"url": "127.0.0.1:8080/item/add/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Key\": \"testincrdecr\",\n\t\"Value\": \"MA==\",\n\t\"Flags\": 0,\n\t\"Expiration\": 0\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Set - testing1: 123",
+			"request": {
+				"url": "127.0.0.1:8080/item/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Key\": \"testing1\",\n\t\"Value\": \"MTIz\",\n\t\"Flags\": 0,\n\t\"Expiration\": 0\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get - testing1",
+			"request": {
+				"url": {
+					"raw": "127.0.0.1:8080/item/?key=testing1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"item",
+						""
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "testing1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - testing1",
+			"request": {
+				"url": {
+					"raw": "127.0.0.1:8080/item/?key=testing1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"item",
+						""
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "testing1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Increment - testincrdecr: +1",
+			"request": {
+				"url": "127.0.0.1:8080/item/increment/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Key\": \"testincrdecr\",\n\t\"Delta\": 1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Decrement - testincrdecr: -2",
+			"request": {
+				"url": "127.0.0.1:8080/item/decrement/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Key\": \"testincrdecr\",\n\t\"Delta\": 2\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Replace - testing1: 321",
+			"request": {
+				"url": "127.0.0.1:8080/item/replace/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Key\": \"testing1\",\n\t\"Value\": \"MzIx\",\n\t\"Flags\": 0,\n\t\"Expiration\": 0\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Touch - testing1",
+			"request": {
+				"url": "127.0.0.1:8080/item/touch/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Key\": \"testing1\",\n\t\"Seconds\": 5\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "MultiGet - testing1, testincrdecr",
+			"request": {
+				"url": {
+					"raw": "127.0.0.1:8080/items/?keys=testing1&keys=testincrdecr",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"items",
+						""
+					],
+					"query": [
+						{
+							"key": "keys",
+							"value": "testing1",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "keys",
+							"value": "testincrdecr",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Compare and Swap - testing1: 333",
+			"request": {
+				"url": "127.0.0.1:8080/item/compareandswap/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Key\": \"testing1\",\n\t\"Value\": \"MzMz\",\n\t\"Flags\": 0,\n\t\"Expiration\": 0,\n\t\"casid\": null\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
