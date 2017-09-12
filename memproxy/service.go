@@ -3,7 +3,6 @@ package memproxysvc
 import (
 	"github.com/bradfitz/gomemcache/memcache"
 	"context"
-	"github.com/davecgh/go-spew/spew"
 )
 
 // Passthrough for gomemcache

@@ -9,7 +9,7 @@ import (
 	"os/signal"
 	"syscall"
 	"fmt"
-	"weebly.com/spacing-guild/memproxy"
+	"github.com/spacing-guild/memproxy"
 	"github.com/bradfitz/gomemcache/memcache"
 )
 
